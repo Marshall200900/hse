@@ -1,0 +1,24 @@
+C:\Users\Alexander\Documents\Visual Studio 2010\Projects\PipesClient\PipesClient\bin\Debug\PipesClient.exe
+C:\Users\Alexander\Documents\Visual Studio 2010\Projects\PipesClient\PipesClient\bin\Debug\PipesClient.pdb
+C:\Users\Alexander\Documents\Visual Studio 2010\Projects\PipesClient\PipesClient\obj\x86\Debug\PipesClient.Properties.Resources.resources
+C:\Users\Alexander\Documents\Visual Studio 2010\Projects\PipesClient\PipesClient\obj\x86\Debug\PipesClient.csproj.GenerateResource.Cache
+C:\Users\Alexander\Documents\Visual Studio 2010\Projects\PipesClient\PipesClient\obj\x86\Debug\PipesClient.exe
+C:\Users\Alexander\Documents\Visual Studio 2010\Projects\PipesClient\PipesClient\obj\x86\Debug\PipesClient.pdb
+C:\Users\Alexander\Documents\Visual Studio 2010\Projects\PipesClient\PipesClient\obj\x86\Debug\Pipes.frmMain.resources
+C:\Users\Alexander\Desktop\12345\New\PipesClient\PipesClient\obj\x86\Debug\PipesClient.exe
+C:\Users\Alexander\Desktop\12345\New\PipesClient\PipesClient\obj\x86\Debug\PipesClient.pdb
+C:\Users\Alexander\Desktop\12345\New\PipesClient\PipesClient\bin\Debug\PipesClient.exe
+C:\Users\Alexander\Desktop\12345\New\PipesClient\PipesClient\bin\Debug\PipesClient.pdb
+C:\Users\Alexander\Desktop\12345\New\PipesClient\PipesClient\obj\x86\Debug\Pipes.frmMain.resources
+C:\Users\Alexander\Desktop\12345\New\PipesClient\PipesClient\obj\x86\Debug\PipesClient.Properties.Resources.resources
+C:\Users\Alexander\Desktop\12345\New\PipesClient\PipesClient\obj\x86\Debug\PipesClient.csproj.GenerateResource.Cache
+C:\Users\arsen\OneDrive\Рабочий стол\1_Pipes\PipesClient\PipesClient\bin\Debug\PipesClient.exe
+C:\Users\arsen\OneDrive\Рабочий стол\1_Pipes\PipesClient\PipesClient\bin\Debug\PipesClient.pdb
+C:\Users\arsen\OneDrive\Рабочий стол\1_Pipes\PipesClient\PipesClient\obj\x86\Debug\Pipes.frmMain.resources
+C:\Users\arsen\OneDrive\Рабочий стол\1_Pipes\PipesClient\PipesClient\obj\x86\Debug\PipesClient.Properties.Resources.resources
+C:\Users\arsen\OneDrive\Рабочий стол\1_Pipes\PipesClient\PipesClient\obj\x86\Debug\PipesClient.csproj.GenerateResource.cache
+C:\Users\arsen\OneDrive\Рабочий стол\1_Pipes\PipesClient\PipesClient\obj\x86\Debug\PipesClient.csproj.CoreCompileInputs.cache
+C:\Users\arsen\OneDrive\Рабочий стол\1_Pipes\PipesClient\PipesClient\obj\x86\Debug\PipesClient.exe
+C:\Users\arsen\OneDrive\Рабочий стол\1_Pipes\PipesClient\PipesClient\obj\x86\Debug\PipesClient.pdb
+C:\Users\arsen\OneDrive\Рабочий стол\1_Pipes\PipesClient\PipesClient\obj\x86\Debug\PipesClient.csprojAssemblyReference.cache
+C:\Users\arsen\OneDrive\Рабочий стол\1_Pipes\PipesClient\PipesClient\obj\x86\Debug\PipesClient.Form1.resources
