@@ -11,7 +11,7 @@ import vk, os, time, math
 # session = vk.AuthSession(app_id=vk_id, user_login=login, user_password=password) 
 # vkapi = vk.API(session, v='5.81')
 
-session = vk.Session(access_token='')
+session = vk.Session(access_token='8ad739e5417b57f55e87601627432331fba8fbfee4e9794133290021743513c5f275843568f5d8cce5c8c')
 vkapi = vk.API(session, v='5.81')
 
 url = "https://vk.com/album-132_47581240"
