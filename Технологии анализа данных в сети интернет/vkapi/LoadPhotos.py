@@ -27,7 +27,6 @@ if not os.path.exists('saved'):
 
 time_now = time.time() # время старта
 
-photos = vkapi.photos.get(owner_id=owner_id, album_id=albums['items'][1]['id'], count=1000, offset=0)
 counter_total = 0
 broken_total = 0
 

@@ -54,7 +54,7 @@ meduza_male_count = len(meduza_sex) - meduza_female_count
 print('Meduza:')
 print('Female percentage: {:.1f}'.format(meduza_female_count / 1000 * 100))
 print('Male percentage: {:.1f}'.format(meduza_male_count / 1000 * 100))
-print('Top countries: {}'.format(meduza_city_rate.most_common(3)))
+print('Top cities: {}'.format(meduza_city_rate.most_common(3)))
 print('Average age: {:.1f}'.format(sum(meduza_ages_years) / len(meduza_ages_years)))
 
 
@@ -72,7 +72,7 @@ perm_male_count = len(perm_sex) - perm_female_count
 print('Perm Active:')
 print('Female percentage: {:.1f}'.format(perm_female_count / 1000 * 100))
 print('Male percentage: {:.1f}'.format(perm_male_count / 1000 * 100))
-print('Top countries: {}'.format(perm_city_rate.most_common(3)))
+print('Top cities: {}'.format(perm_city_rate.most_common(3)))
 print('Average age: {:.1f}'.format(sum(perm_ages_years) / len(perm_ages_years)))
 
 
