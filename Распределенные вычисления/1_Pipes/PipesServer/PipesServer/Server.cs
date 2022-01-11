@@ -18,7 +18,8 @@ namespace Pipes
         private string PipeName = "\\\\" + Dns.GetHostName() + "\\pipe\\ServerPipe";    // имя канала, Dns.GetHostName() - метод, возвращающий имя машины, на которой запущено приложение
         private Thread t;                                                               // поток для обслуживания канала
         private bool _continue = true;                                                  // флаг, указывающий продолжается ли работа с каналом
-
+        private string recievedText = "";
+        private List<string> connectedUsers = new List<string>();
         // конструктор формы
         public frmMain()
         {
@@ -49,16 +50,48 @@ namespace Pipes
                     DIS.Import.FlushFileBuffers(PipeHandle);                                // "принудительная" запись данных, расположенные в буфере операционной системы, в файл именованного канала
                     DIS.Import.ReadFile(PipeHandle, buff, 1024, ref realBytesReaded, 0);    // считываем последовательность байтов из канала в буфер buff
                     msg = Encoding.Unicode.GetString(buff);                                 // выполняем преобразование байтов в последовательность символов
+                    recievedText += "\n >> " + msg;
                     rtbMessages.Invoke((MethodInvoker)delegate
                     {
                         if (msg != "")
-                            rtbMessages.Text += "\n >> " + msg;                             // выводим полученное сообщение на форму
+                        {
+                            Console.WriteLine(recievedText);
+                            rtbMessages.Text += "\n >> " + msg;                            // выводим полученное сообщение на форму
+                        }
                     });
-
+                    string username = msg.Split(new string[] { " >> " }, StringSplitOptions.None)[0];
+                    AddUserIfNeedTo(username);
                     DIS.Import.DisconnectNamedPipe(PipeHandle);                             // отключаемся от канала клиента 
+                    PingClients(msg);
                     Thread.Sleep(500);                                                      // приостанавливаем работу потока перед тем, как приcтупить к обслуживанию очередного клиента
                 }
             }
+        }
+        private void AddUserIfNeedTo(string user)
+        {
+            if (!connectedUsers.Contains(user))
+            {
+                connectedUsers.Add(user);
+            }
+        }
+        private void PingClients(string msg)
+        {
+            foreach(string user in connectedUsers)
+            {
+                SendMessage(user, msg);
+                Thread.Sleep(500); // магический костыль
+            }
+        }
+        private void SendMessage(string username, string message)
+        {
+            string name = "\\\\.\\pipe\\" + username;
+            uint BytesWritten = 0;  // количество реально записанных в канал байт
+            byte[] buff = Encoding.Unicode.GetBytes(message);    // выполняем преобразование сообщения (вместе с идентификатором машины) в последовательность байт
+
+            // открываем именованный канал, имя которого указано в поле tbPipe
+            int pipeSender = DIS.Import.CreateFile(name, DIS.Types.EFileAccess.GenericWrite, DIS.Types.EFileShare.Read, 0, DIS.Types.ECreationDisposition.OpenExisting, 0, 0);
+            DIS.Import.WriteFile(pipeSender, buff, Convert.ToUInt32(buff.Length), ref BytesWritten, 0);         // выполняем запись последовательности байт в канал
+            DIS.Import.CloseHandle(pipeSender);              // закрываем дескриптор канала
         }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)

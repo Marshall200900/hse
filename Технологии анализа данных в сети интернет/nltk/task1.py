@@ -5,7 +5,7 @@ from nltk.probability import FreqDist
 import pymorphy2
 
 # read file
-f = open('levtolstoy.txt', 'r')
+f = open('Bible_txt.txt', 'r')
 tokens = nltk.word_tokenize(f.read())
 f.close()
 

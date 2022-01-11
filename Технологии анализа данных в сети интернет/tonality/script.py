@@ -20,7 +20,7 @@ REVIEWS_LINK = 'https://www.imdb.com/title/{}/reviews?ref_=tt_ov_rt'
 reviews_ratings = []
 reviews_score_positive = []
 reviews_texts = []
-
+reviews_positive = []
 
 class Review:
     review_id = 1
@@ -66,27 +66,27 @@ def sentiment_analysis_example(client, reviews):
     for x in batch(contents, 3):
         responses = client.analyze_sentiment(documents=x)
         for response in responses:
-            reviews[i].sentiment = response.sentiment
-            reviews[i].score_positive = response.confidence_scores.positive
-            reviews[i].score_neutral = response.confidence_scores.neutral
-            reviews[i].score_negative = response.confidence_scores.negative
+            #reviews_sentiment.append(response.sentiment)
+            reviews_positive.append({i, response.confidence_scores.positive})
+            # reviews[i].score_neutral = response.confidence_scores.neutral
+            # reviews[i].score_negative = response.confidence_scores.negative
             i += 1
         
 for id in film_ids:
     r = requests.get(REVIEWS_LINK.format(id), headers=headers)
     soup = bs(r.content,"html.parser")
-  
+    i = 0
     for review_block in soup.find_all("div", {"class":"review-container"}):  
         if (review_block.find_all("span", {"class":"rating-other-user-rating"})):
             reviews_ratings.append(review_block.find_all("span", {"class":"rating-other-user-rating"})[0].find("span").text)
         if review_block.find("div", {"class":"content"}):
             container = review_block.find("div", {"class":"content"})     
-        reviews_texts.append(container.find("div", {"class":"text"}).text)
+        reviews_texts.append({i, container.find("div", {"class":"text"}).text})
 
 client = authenticate_client()
 
 sentiment_analysis_example(client, reviews_texts)
-
+print(len(reviews_positive))
 
 data = {'rating':[float(rev) for rev in reviews_ratings],
         'sentiment':[rev.score_positive * 10 for rev in reviews_score_positive]}
